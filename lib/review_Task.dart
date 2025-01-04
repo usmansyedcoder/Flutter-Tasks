@@ -13,14 +13,14 @@ class ReviewTask extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Row(
+          const Row(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 80.0),
+                padding: EdgeInsets.only(left: 80.0),
                 child: SizedBox(
                   height: 200,
                   width: 200,
-                  child: const CircleAvatar(
+                  child: CircleAvatar(
                     backgroundImage: AssetImage('assets/logo.jpeg'),
                   ),
                 ),

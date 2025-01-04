@@ -90,7 +90,6 @@ import 'package:flutter/material.dart';
 //   }
 // }
 
-
 class Practice extends StatefulWidget {
   const Practice({super.key});
 
@@ -125,7 +124,7 @@ class _PracticeState extends State<Practice>
           tabs: const [
             Tab(icon: Icon(Icons.home), text: 'Home'),
             Tab(icon: Icon(Icons.star), text: 'Favorites'),
-            Tab(icon: Icon(Icons.ac_unit), text: 'Settings'),
+            Tab(icon: Icon(Icons.settings), text: 'Settings'),
           ],
         ),
       ),
@@ -134,7 +133,7 @@ class _PracticeState extends State<Practice>
         children: const [
           Center(child: Text('Home Page')),
           Center(child: Text('Favorites Page')),
-          Center(child: Text('Settings Page')),
+          Center(child: Text('Settings Pages')),
         ],
       ),
     );
