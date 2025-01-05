@@ -1,14 +1,16 @@
 import 'package:batch2ui/Burger_App/Burger_App_Page1.dart';
 import 'package:batch2ui/Plant_Task/Plant_Home_page1.dart';
+import 'package:batch2ui/Practice/Defalult_Tab_Controllers.dart';
+import 'package:batch2ui/Practice/practice.dart';
 import 'package:batch2ui/Security_Task/Security_Home_page1.dart';
 import 'package:batch2ui/Shirt_Task/Shirt_Home_Page1.dart';
 import 'package:batch2ui/Shoes_Task/Shoes_Home_Page1.dart';
+import 'package:batch2ui/Stack_Task.dart';
 import 'package:batch2ui/Tutor_Task/Home_Page1.dart';
 import 'package:batch2ui/congrats_Card.dart';
 import 'package:batch2ui/flutter_Tutorial.dart';
 import 'package:batch2ui/instagram.dart';
 import 'package:batch2ui/listview_Kullanimi.dart';
-import 'package:batch2ui/practice.dart';
 import 'package:batch2ui/profile_Task.dart';
 import 'package:batch2ui/recipe_List.dart';
 import 'package:batch2ui/review_Task.dart';
@@ -28,6 +30,7 @@ class Task extends StatefulWidget {
 class _Task2State extends State<Task> {
   // List of tasks and their respective pages
   final List<Map<String, dynamic>> tasks = [
+    {'title': 'Practice', 'widget': const Practice()},
     {'title': 'Zap Surveys', 'widget': const ZapSurveys()},
     {'title': 'Congrats Card', 'widget': const CongratsCard()},
     {'title': 'Quiz App', 'widget': const QuizApp()},
@@ -45,7 +48,8 @@ class _Task2State extends State<Task> {
     {'title': 'Security Task', 'widget': const SecurityHomePage1()},
     {'title': 'Review Task', 'widget': const ReviewTask()},
     {'title': 'Plant Login', 'widget': const PlantHomePage1()},
-    {'title': 'Practice', 'widget': const Practice()},
+    {'title': 'Stack Task', 'widget': const StackTask()},
+    {'title': 'Tab bar', 'widget': const DefalultTabControllers()},
   ];
 
   @override
@@ -95,7 +99,7 @@ class _Task2State extends State<Task> {
                       fontSize: 20,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'Sacramento',
+                      // fontFamily: 'Sacramento',
                     ),
                   ),
                 ),

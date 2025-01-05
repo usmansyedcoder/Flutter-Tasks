@@ -123,8 +123,9 @@ class _PracticeState extends State<Practice>
           controller: _tabController,
           tabs: const [
             Tab(icon: Icon(Icons.home), text: 'Home'),
-            Tab(icon: Icon(Icons.star), text: 'Favorites'),
+            Tab(icon: Icon(Icons.call), text: 'Contacts'),
             Tab(icon: Icon(Icons.settings), text: 'Settings'),
+            
           ],
         ),
       ),
@@ -132,7 +133,7 @@ class _PracticeState extends State<Practice>
         controller: _tabController,
         children: const [
           Center(child: Text('Home Page')),
-          Center(child: Text('Favorites Page')),
+          Center(child: Text('Contacts Page')),
           Center(child: Text('Settings Pages')),
         ],
       ),
