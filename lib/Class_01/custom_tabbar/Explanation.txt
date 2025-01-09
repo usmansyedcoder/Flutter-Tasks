@@ -1,0 +1,188 @@
+Here's a detailed explanation of the Flutter code:
+
+---
+
+### **Imports**
+```dart
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+```
+- **`flutter/material.dart`**: Imports Flutter's Material Design widgets.
+- **`flutter_screenutil/flutter_screenutil.dart`**: A library for responsive UI design that adapts the layout to different screen sizes. The `ScreenUtil` package is used to adjust widget sizes, paddings, and margins dynamically based on the screen size.
+
+---
+
+### **CustomTabbarScreen Widget**
+```dart
+class CustomTabbarScreen extends StatefulWidget {
+  const CustomTabbarScreen({super.key});
+```
+- **`CustomTabbarScreen`**: A `StatefulWidget` that can maintain a dynamic state. This is necessary since the UI will change when the user interacts with the tab buttons.
+- **`super.key`**: A key parameter is passed to identify the widget in the widget tree.
+
+---
+
+### **State Class**
+```dart
+State<CustomTabbarScreen> createState() => _CustomTabbarScreenState();
+```
+- The state of `CustomTabbarScreen` is managed in the `_CustomTabbarScreenState` class.
+
+---
+
+### **State Variables**
+```dart
+bool isplace = true;
+```
+- **`isplace`**: A boolean variable used to track which tab is active (`true` for "Place Bid" and `false` for "Buy Now").
+
+```dart
+void selectTab(val) {
+  setState(() {
+    isplace = val;
+  });
+}
+```
+- **`selectTab`**: A function to update the `isplace` variable and rebuild the UI using `setState`.
+
+---
+
+### **Scaffold**
+```dart
+return Scaffold(
+  body: Column(
+    children: [
+```
+- **`Scaffold`**: Provides the structure for the screen, including app bars, body, etc.
+- **`Column`**: Arranges its children widgets vertically.
+
+---
+
+### **SizedBox**
+```dart
+SizedBox(height: 30.h),
+```
+- **`SizedBox`**: Adds vertical spacing (30 units scaled using `ScreenUtil`) between the top of the screen and the tab bar.
+
+---
+
+### **Padding and Container**
+```dart
+Padding(
+  padding: EdgeInsets.symmetric(horizontal: 20.w),
+  child: Container(
+    width: double.infinity,
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(40.r),
+        color: Colors.grey),
+    height: 40.h,
+```
+- **`Padding`**: Adds horizontal padding of 20 scaled units around the child widget (tab bar).
+- **`Container`**:
+  - **`width: double.infinity`**: Makes the container stretch across the screen width.
+  - **`BoxDecoration`**: Adds styling to the container:
+    - **`borderRadius.circular(40.r)`**: Makes the corners rounded with a radius of 40 (scaled units).
+    - **`color: Colors.grey`**: Sets the background color to grey.
+  - **`height: 40.h`**: Sets the height of the container.
+
+---
+
+### **Row for Tab Buttons**
+```dart
+child: Row(
+  children: [
+```
+- **`Row`**: Displays the two tab buttons ("Place Bid" and "Buy Now") horizontally.
+
+---
+
+### **First Tab: Place Bid**
+```dart
+GestureDetector(
+  onTap: () {
+    selectTab(true);
+  },
+  child: Container(
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(40.r),
+        color: isplace ? Colors.green : Colors.grey),
+    height: 40.h,
+    width: 175,
+    child: Center(
+        child: Text(
+      'place bid',
+      style: TextStyle(
+          color: Colors.black,
+          fontFamily: 'poppins',
+          fontWeight: FontWeight.w700),
+    )),
+  ),
+),
+```
+- **`GestureDetector`**: Detects taps on the tab button.
+  - **`onTap`**: Calls the `selectTab` function to activate the "Place Bid" tab by setting `isplace = true`.
+- **Inner `Container`**:
+  - The container's color is dynamic:
+    - **`isplace ? Colors.green : Colors.grey`**: If `isplace` is `true`, the background is green; otherwise, it's grey.
+  - Sets the height, width, and rounded corners of the button.
+- **Text**:
+  - Displays "place bid" inside the button.
+  - **`fontWeight: FontWeight.w700`**: Bold text.
+
+---
+
+### **Second Tab: Buy Now**
+```dart
+GestureDetector(
+  onTap: () {
+    selectTab(false);
+  },
+  child: Container(
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(40.r),
+        color: isplace ? Colors.grey : Colors.green),
+    height: 40.h,
+    width: 174,
+    child: Center(
+        child: Text(
+      'buy now',
+      style: TextStyle(
+          color: Colors.black,
+          fontFamily: 'poppins',
+          fontWeight: isplace ? FontWeight.w700 : FontWeight.w300),
+    )),
+  ),
+),
+```
+- Similar to the "Place Bid" button, but it sets `isplace = false` when tapped.
+
+---
+
+### **Dynamic Content**
+```dart
+isplace
+    ? Container(
+        height: 200,
+        width: double.infinity,
+        color: Colors.red,
+        child: Center(child: Text('place bid')),
+      )
+    : Container(
+        height: 200,
+        width: double.infinity,
+        color: Colors.green,
+        child: Center(child: Text('buy now')),
+      ),
+```
+- **`isplace`**: Determines which content to display:
+  - If `isplace == true`: Displays a red box with "place bid" text.
+  - If `isplace == false`: Displays a green box with "buy now" text.
+
+---
+
+### **Overall Functionality**
+1. The `CustomTabbarScreen` has two tabs: "Place Bid" and "Buy Now."
+2. Clicking a tab updates the UI and highlights the selected tab with green color.
+3. The dynamic content area below the tabs changes based on the selected tab.
+
+Would you like help improving this design or adding more features? 😊

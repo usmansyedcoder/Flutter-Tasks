@@ -1,11 +1,13 @@
 import 'package:batch2ui/Burger_App/Burger_App_Page1.dart';
 import 'package:batch2ui/Plant_Task/Plant_Home_page1.dart';
-import 'package:batch2ui/Practice/Defalult_Tab_Controllers.dart';
-import 'package:batch2ui/Practice/practice.dart';
+import 'package:batch2ui/Practice/Gradients_02.dart';
 import 'package:batch2ui/Security_Task/Security_Home_page1.dart';
 import 'package:batch2ui/Shirt_Task/Shirt_Home_Page1.dart';
 import 'package:batch2ui/Shoes_Task/Shoes_Home_Page1.dart';
+import 'package:batch2ui/Splash_Screen/Home_01.dart';
 import 'package:batch2ui/Stack_Task.dart';
+import 'package:batch2ui/Stack_Task02/Profile_Screen.dart';
+import 'package:batch2ui/Tab_Bar_Task/Tab_Bar_Task.dart';
 import 'package:batch2ui/Tutor_Task/Home_Page1.dart';
 import 'package:batch2ui/congrats_Card.dart';
 import 'package:batch2ui/flutter_Tutorial.dart';
@@ -17,6 +19,7 @@ import 'package:batch2ui/review_Task.dart';
 import 'package:batch2ui/scalar_Topics.dart';
 import 'package:batch2ui/Quiz_App.dart';
 import 'package:batch2ui/Profile_Information.dart';
+import 'package:batch2ui/task5.dart';
 import 'package:batch2ui/zap_Surveys.dart';
 import 'package:flutter/material.dart';
 
@@ -30,10 +33,11 @@ class Task extends StatefulWidget {
 class _Task2State extends State<Task> {
   // List of tasks and their respective pages
   final List<Map<String, dynamic>> tasks = [
-    {'title': 'Practice', 'widget': const Practice()},
+    {'title': 'Practice', 'widget': const Gradients02()},
     {'title': 'Zap Surveys', 'widget': const ZapSurveys()},
     {'title': 'Congrats Card', 'widget': const CongratsCard()},
     {'title': 'Quiz App', 'widget': const QuizApp()},
+    {'title': 'Task 5', 'widget': const Task5()},
     {'title': 'Profile', 'widget': const ProfileInformation()},
     {'title': 'Burger App', 'widget': const BurgerAppPage1()},
     {'title': 'Shoes Task', 'widget': const ShoesHomePage1()},
@@ -48,8 +52,10 @@ class _Task2State extends State<Task> {
     {'title': 'Security Task', 'widget': const SecurityHomePage1()},
     {'title': 'Review Task', 'widget': const ReviewTask()},
     {'title': 'Plant Login', 'widget': const PlantHomePage1()},
-    {'title': 'Stack Task', 'widget': const StackTask()},
-    {'title': 'Tab bar', 'widget': const DefalultTabControllers()},
+    {'title': 'Stack Task 1', 'widget': const StackTask()},
+    {'title': 'Tab Bar Task', 'widget': const TabBarTask()},
+    {'title': 'Stack Task 2', 'widget': ProfileScreen()},
+    {'title': 'Splash Screen', 'widget': Home01()},
   ];
 
   @override
@@ -100,6 +106,7 @@ class _Task2State extends State<Task> {
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       // fontFamily: 'Sacramento',
+                      fontFamily: 'comic',
                     ),
                   ),
                 ),

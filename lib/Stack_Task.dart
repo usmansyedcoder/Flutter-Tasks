@@ -36,18 +36,18 @@ class _StackTaskState extends State<StackTask> {
 
           // Second circular image (profile picture)
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 150),
+            margin: const EdgeInsets.symmetric(horizontal: 100),
+            
             height: 150,
             width: 150,
-            child: ClipOval(
+            child: ClipRRect(
               child: Image.asset(
-                'assets/profile.png',
-                fit: BoxFit.cover, // Ensures the image fits the circle
+                'assets/usman2.png',
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 100.0),
+            padding: const EdgeInsets.only(left: 80.0),
             child: Container(
               margin: const EdgeInsets.symmetric(vertical: 150),
               height: 30,
@@ -62,7 +62,7 @@ class _StackTaskState extends State<StackTask> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 110.0),
+            padding: const EdgeInsets.only(left: 80.0),
             child: Container(
               margin: const EdgeInsets.symmetric(vertical: 170),
               height: 30,
